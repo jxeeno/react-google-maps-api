@@ -16,6 +16,7 @@ const eventMap = {
   onMouseOver: 'mouseover',
   onMouseUp: 'mouseup',
   onRightClick: 'rightclick',
+  onEditableChanged: 'editable_changed'
 }
 
 const updaterMap = {
@@ -88,6 +89,8 @@ export interface PolylineProps {
   onLoad?: (polyline: google.maps.Polyline) => void
   /** This callback is called when the component unmounts. It is called with the polyline instance. */
   onUnmount?: (polyline: google.maps.Polyline) => void
+  /** This callback is called when the polyline is edited. */
+  onEditableChanged?: () => void
 }
 
 export class Polyline extends React.PureComponent<PolylineProps, PolylineState> {
